@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+* {
+  outline: 1px solid red; /* Helps you visually catch wide elements */
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
