@@ -1,0 +1,105 @@
+/* Achievements.module.css */
+.achievements {
+ padding: var(--spacing-xl) var(--spacing-md);
+ background-color: var(--bg-primary);
+ transition: background-color var(--transition-speed);
+}
+.achievements.dark {
+ background-color: var(--bg-primary);
+}
+.timelineContainer {
+ position: relative;
+ max-width: 1200px;
+ margin: 0 auto;
+}
+.timelineContainer::after {
+ content: '';
+ position: absolute;
+ width: 6px;
+ background-color: var(--border-color);
+ top: 0;
+ bottom: 0;
+ left: 50%;
+ margin-left: -3px;
+}
+.timelineItem {
+ padding: 10px 40px;
+ position: relative;
+ background-color: inherit;
+ width: 50%;
+ box-sizing: border-box;
+ margin-bottom: var(--spacing-md);
+}
+.timelineItem::after {
+ content: '';
+ position: absolute;
+ width: 25px;
+ height: 25px;
+ right: -13px;
+ background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+ border-radius: 50%;
+ top: 20px;
+ z-index: 1;
+}
+.left {
+ left: 0;
+}
+.right {
+ left: 50%;
+}
+.right::after {
+ left: -12px;
+}
+.timelineContent {
+ padding: var(--spacing-md);
+ background-color: var(--card-bg);
+ border-radius: 8px;
+ box-shadow: 0 5px 15px var(--shadow-color);
+ transition: transform var(--transition-speed);
+}
+.timelineContent:hover {
+ transform: translateY(-5px);
+}
+.date {
+ display: inline-block;
+ color: white;
+ background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+ padding: 5px 15px;
+ border-radius: 20px;
+ font-weight: 600;
+ margin-bottom: var(--spacing-sm);
+}
+.timelineContent h3 {
+ color: var(--text-primary);
+ margin-bottom: var(--spacing-sm);
+}
+.timelineContent p {
+ color: var(--text-secondary);
+ margin-bottom: var(--spacing-sm);
+}
+.certLink {
+ display: inline-block;
+ margin-top: var(--spacing-sm);
+ color: var(--accent-color);
+ font-weight: 500;
+}
+@media (max-width: 768px) {
+ .timelineContainer::after {
+ left: 31px;
+ }
+ 
+ .timelineItem {
+ width: 100%;
+ padding-left: 70px;
+ padding-right: 25px;
+ }
+ 
+ .timelineItem::after {
+ left: 18px;
+ right: auto;
+ }
+ 
+ .left, .right {
+ left: 0;
+ }
+}

@@ -1,0 +1,114 @@
+/* Projects.module.css */
+.projects {
+ padding: var(--spacing-xl) var(--spacing-md);
+ background-color: var(--bg-secondary);
+ transition: background-color var(--transition-speed);
+}
+.projects.dark {
+ background-color: var(--bg-secondary);
+}
+.sectionTitle {
+ text-align: center;
+ font-size: 2.5rem;
+ margin-bottom: var(--spacing-xl);
+ position: relative;
+ color: var(--text-primary);
+}
+.sectionTitle::after {
+ content: '';
+ position: absolute;
+ bottom: -10px;
+ left: 50%;
+ transform: translateX(-50%);
+ width: 80px;
+ height: 3px;
+ background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+}
+.projectsGrid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+ gap: var(--spacing-lg);
+ max-width: 1200px;
+ margin: 0 auto;
+}
+.projectCard {
+ background-color: var(--card-bg);
+ border-radius: 10px;
+ overflow: hidden;
+ box-shadow: 0 5px 15px var(--shadow-color);
+ transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+.projectCard:hover {
+ transform: translateY(-10px);
+ box-shadow: 0 15px 30px var(--shadow-color);
+}
+.projectImage {
+ height: 200px;
+ position: relative;
+ overflow: hidden;
+}
+.projectImage img {
+ width: 100%;
+ height: 100%;
+ object-fit: contain;
+ transition: transform var(--transition-speed);
+}
+.projectCard:hover .projectImage img {
+ transform: scale(1.1);
+}
+.projectOverlay {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: rgba(0, 0, 0, 0.7);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ opacity: 0;
+ transition: opacity var(--transition-speed);
+}
+.projectCard:hover .projectOverlay {
+ opacity: 1;
+}
+.projectLinks {
+ display: flex;
+ gap: var(--spacing-md);
+}
+.projectLinks a {
+ background-color: var(--accent-color);
+ color: white;
+ padding: 8px 16px;
+ border-radius: 4px;
+ font-weight: 600;
+ transition: background-color var(--transition-speed);
+}
+.projectLinks a:hover {
+ background-color: var(--accent-hover);
+}
+.projectInfo {
+ padding: var(--spacing-md);
+}
+.projectInfo h3 {
+ margin-bottom: var(--spacing-sm);
+ color: var(--text-primary);
+}
+.projectInfo p {
+ color: var(--text-secondary);
+ margin-bottom: var(--spacing-sm);
+}
+.projectTags {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 8px;
+ margin-top: var(--spacing-sm);
+}
+.tag {
+ background-color: var(--accent-color);
+ color: white;
+ padding: 4px 10px;
+ border-radius: 20px;
+ font-size: 0.8rem;
+ opacity: 0.8;
+}

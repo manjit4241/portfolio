@@ -1,0 +1,17 @@
+/* App.module.css */
+.app {
+ min-height: 100vh;
+ display: flex;
+ flex-direction: column;
+}
+.main {
+ flex: 1;
+ padding-top: 70px; /* Space for fixed header */
+}
+.section {
+ padding: var(--spacing-xl) var(--spacing-md);
+ min-height: 100vh;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+}

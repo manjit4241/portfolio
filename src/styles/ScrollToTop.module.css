@@ -1,0 +1,28 @@
+.scrollTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  opacity: 0.8;
+  z-index: 1000;
+}
+
+.scrollTop:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+.scrollTop.dark {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
