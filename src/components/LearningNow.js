@@ -21,6 +21,14 @@ const LearningNow = () => {
     {
       title: 'Node.js & Express',
       description: 'Crafting full-stack applications from frontend to backend.'
+    },
+    {
+    title: 'Machine Learning Fundamentals',
+    description: 'Building intelligent systems that learn from data and adapt over time.'
+    },
+    {
+    title: 'Deep Learning & Neural Networks',
+    description: 'Exploring powerful models inspired by the human brain to solve complex tasks.'
     }
   ];
 
