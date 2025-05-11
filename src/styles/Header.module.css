@@ -98,3 +98,14 @@
  margin-left: 0;
  }
 }
+.themeToggleItem {
+  margin-left: var(--spacing-md);
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .themeToggleItem {
+    margin-left: 0;
+    margin-top: var(--spacing-sm);
+  }
+}

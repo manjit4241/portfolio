@@ -44,8 +44,9 @@ const Header = () => {
  <li><a href="#projects" onClick={closeMenu}>Projects</a></li>
  <li><a href="#achievements" onClick={closeMenu}>Achievements</a></li>
  <li><a href="#about" onClick={closeMenu}>About</a></li>
+ <li className={styles.themeToggleItem}><ThemeToggle /></li>
  </ul>
- <ThemeToggle />
+ 
  </nav>
  </div>
  </header>

@@ -226,3 +226,22 @@
     margin-bottom: 2rem;
   }
 }
+.welcome {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--highlight-color); /* use a defined theme color or hex */
+  animation: fadeIn 1.5s ease-in;
+  text-align: center;
+}
+
+.playground {
+  color: #ff6b6b; /* or any pop color that matches your theme */
+  font-style: italic;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -12,11 +12,16 @@ const Homepage = () => {
           <h1 className={styles.title}>
             Hi, I'm <span className={styles.highlight}>Manjit</span>
           </h1>
-          <h2 className={styles.subtitle}>Frontend Developer & UI Designer</h2>
+          <h2 className={styles.subtitle}>Frontend Developer | Problem Solver | Growth Seeker
+</h2>
           <p className={styles.description}>
-            I create engaging web experiences that combine beautiful design with 
-            clean, efficient code. Welcome to my portfolio!
+            I'm an engineering student who blends code with creativity to craft clean, intuitive web experiences. Always curious, always evolving — whether it's diving deep into React Native, sharpening DSA skills, or uncovering the layers of self through reflection, I build not just for users, but for impact.
+            
+            <p className={styles.welcome}>
+  <strong>Welcome to my <span className={styles.playground}>digital playground</span>.</strong>
+</p>
           </p>
+          
           <div className={styles.btnContainer}>
             <a href="#projects" className={styles.primaryBtn}>
               View My Work
