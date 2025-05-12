@@ -279,13 +279,19 @@
     left: 50%;
     transform: translateX(-50%);
   }
+  .content,
+.imageContainer {
+  flex: none;
+  width: 100%;
+}
+
 }
 
 /* Medium small screens - critical breakpoint at 562px */
 @media (max-width: 562px) {
   .homepage {
     padding: 0;
-    width: 100vw;
+    width: 100%;
   }
 
   .container {
@@ -344,7 +350,7 @@
 }
 
 /* Very small screens */
-@media (max-width: 400px) {
+@media (max-width: 360px) {
   .buttons {
     flex-direction: column;
     align-items: center;

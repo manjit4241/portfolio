@@ -28,25 +28,27 @@ function App() {
  }, []);
  return (
  <ThemeProvider>
- <div className={styles.app}>
- <Header />
- <main className={styles.main}>
- <section id="home" className={styles.section}>
- <Homepage />
- </section>
- <section id="projects" className={styles.section}>
- <Projects />
- </section>
- <section id="learningNow" className={styles.section}>
- <LearningNow />
- </section>
- <section id="about" className={styles.section}>
- <About />
- </section>
- </main>
- <ScrollToTop />
- </div>
- </ThemeProvider>
+  <div className={styles.app}>
+    <Header />
+    <div className={styles.wrapper}> {/* 💡 Add this wrapper */}
+      <main className={styles.main}>
+        <section id="home" className={styles.section}>
+          <Homepage />
+        </section>
+        <section id="projects" className={styles.section}>
+          <Projects />
+        </section>
+        <section id="learningNow" className={styles.section}>
+          <LearningNow />
+        </section>
+        <section id="about" className={styles.section}>
+          <About />
+        </section>
+      </main>
+    </div>
+    <ScrollToTop />
+  </div>
+</ThemeProvider>
  );
 }
 export default App;
