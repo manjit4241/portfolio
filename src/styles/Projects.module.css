@@ -86,6 +86,7 @@
 }
 .projectLinks a:hover {
  background-color: var(--accent-hover);
+ background-color: #98d400;
 }
 .projectInfo {
  padding: var(--spacing-md);

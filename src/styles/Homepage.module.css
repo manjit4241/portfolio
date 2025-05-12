@@ -4,9 +4,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 1rem;
+  padding: 0;
   position: relative;
   transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .dark {
@@ -15,24 +19,33 @@
 }
 
 .container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 1rem;
+  padding: 0 1rem; /* Move padding from homepage to container */
+  box-sizing: border-box; /* Include padding in width calculation */
+  overflow-x: hidden; /* Additional overflow prevention */
 }
 
 .content {
   flex: 1;
   padding: 2rem 0;
+  width: 100%; /* Ensure content doesn't exceed viewport */
+  max-width: 100%; /* Additional safeguard */
+  overflow-wrap: break-word; /* Ensure text wraps properly */
+  box-sizing: border-box;
 }
 
 .title {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
   font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.2;
+  word-wrap: break-word; /* Ensure long words don't overflow */
 }
 
 .dark .title {
@@ -48,7 +61,7 @@
 }
 
 .subtitle {
-  font-size: 1.5rem;
+  font-size: clamp(1.1rem, 3vw, 1.5rem); /* Responsive font size */
   font-weight: 500;
   margin-bottom: 1.5rem;
   color: #4a5568;
@@ -59,11 +72,12 @@
 }
 
 .description {
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 2vw, 1.1rem); /* Responsive font size */
   line-height: 1.6;
   margin-bottom: 2rem;
-  max-width: 600px;
+  max-width: 100%; /* Changed from fixed 600px */
   color: #2d3748;
+  word-wrap: break-word; /* Ensure text wraps properly */
 }
 
 .dark .description {
@@ -72,8 +86,9 @@
 
 .buttons {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem; /* Reduced gap for small screens */
   margin-top: 2rem;
+  flex-wrap: wrap; /* Allow buttons to wrap on very small screens */
 }
 
 .primaryBtn, .secondaryBtn {
@@ -84,6 +99,8 @@
   transition: all 0.3s ease;
   text-decoration: none;
   display: inline-block;
+  text-align: center; /* Center text in buttons */
+  font-size: clamp(0.8rem, 2vw, 1rem); /* Responsive font size */
 }
 
 .primaryBtn {
@@ -117,12 +134,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 100%; /* Ensure container doesn't overflow */
 }
 
 .profileImage {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: clamp(150px, 40vw, 300px); /* Responsive width */
+  height: clamp(150px, 40vw, 300px); /* Responsive height */
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -147,8 +165,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  opacity: 0.7;
+  opacity: 0.4;
   animation: fadeIn 2s ease-in-out infinite alternate;
+  z-index: 5;
+  pointer-events: none;
+  width: auto; /* Control width */
 }
 
 .scrollIndicator span {
@@ -190,58 +211,166 @@
 
 @keyframes fadeIn {
   0% {
-    opacity: 0.3;
+    opacity: 0.2;
   }
   100% {
-    opacity: 0.7;
+    opacity: 0.4;
   }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-  
-  .content {
-    padding: 1rem 0;
-  }
-  
-  .title {
-    font-size: 2.5rem;
-  }
-  
-  .description {
-    margin: 0 auto 2rem;
-  }
-  
-  .buttons {
-    justify-content: center;
-  }
-  
-  .profileImage {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 2rem;
-  }
-}
 .welcome {
   margin-top: 1.5rem;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3vw, 1.2rem); /* Responsive font size */
   font-weight: bold;
-  color: var(--highlight-color); /* use a defined theme color or hex */
-  animation: fadeIn 1.5s ease-in;
+  color: var(--highlight-color);
+  animation: fadeInText 1.5s ease-in;
   text-align: center;
+  width: 100%; /* Control width */
 }
 
 .playground {
-  color: #ff6b6b; /* or any pop color that matches your theme */
+  color: #ff6b6b;
   font-style: italic;
   font-weight: 700;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
-@keyframes fadeIn {
+
+@keyframes fadeInText {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Improved Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 0 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .content {
+    padding: 1rem 0;
+    width: 100%;
+    max-width: 100vw;
+  }
+  
+  .description {
+    margin: 0 auto 2rem;
+    width: 100%;
+    max-width: 100%;
+    font-size: 1rem;
+  }
+  
+  .buttons {
+    justify-content: center;
+    position: relative;
+    z-index: 20;
+    margin-bottom: 4rem;
+    width: 100%;
+  }
+  
+  /* Fix scroll indicator position for mobile */
+  .scrollIndicator {
+    bottom: 1rem;
+    width: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Medium small screens - critical breakpoint at 562px */
+@media (max-width: 562px) {
+  .homepage {
+    padding: 0;
+    width: 100vw;
+  }
+
+  .container {
+    padding: 0.5rem;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .content {
+    padding: 1rem 0.5rem;
+    width: 100%;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    word-break: break-word;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+  }
+  
+  .buttons {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding: 0 0.5rem;
+  }
+  
+  .primaryBtn, .secondaryBtn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    margin: 0.2rem;
+  }
+  
+  .profileImage {
+    width: 150px;
+    height: 150px;
+    border-width: 3px;
+  }
+  
+  .welcome {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 400px) {
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .primaryBtn, .secondaryBtn {
+    width: 90%;
+    max-width: 200px;
+    margin: 0.3rem auto;
+  }
+  
+  .title {
+    font-size: 1.6rem;
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .description {
+    font-size: 0.85rem;
+  }
+  
+  .profileImage {
+    width: 120px;
+    height: 120px;
+  }
 }

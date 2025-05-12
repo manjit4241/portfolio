@@ -4,7 +4,7 @@ import styles from '../styles/Homepage.module.css';
 
 const Homepage = () => {
   const { isDarkMode } = useContext(ThemeContext);
-  
+    
   return (
     <div className={`${styles.homepage} ${isDarkMode ? styles.dark : ''}`}>
       <div className={styles.container}>
@@ -19,7 +19,7 @@ const Homepage = () => {
           <p className={styles.welcome}>
             <strong>Welcome to my <span className={styles.playground}>digital playground</span>.</strong>
           </p>
-          
+           
           <div className={styles.buttons}>
             <a href="#projects" className={styles.primaryBtn}>
               View My Work
@@ -29,7 +29,7 @@ const Homepage = () => {
             </a>
           </div>
         </div>
-        
+         
         <div className={styles.imageContainer}>
           <div className={styles.profileImage}>
             <img
@@ -39,7 +39,7 @@ const Homepage = () => {
           </div>
         </div>
       </div>
-      
+     
       <div className={styles.scrollIndicator}>
         <span>Scroll Down</span>
         <div className={styles.mouseIcon}>
