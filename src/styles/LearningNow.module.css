@@ -1,7 +1,10 @@
+/* Learning Now Responsive CSS */
 .learningNow {
-  padding: 4rem 1.5rem;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 1.5rem);
   background-color: var(--bg-primary);
   transition: background-color 0.3s ease;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .dark {
@@ -10,36 +13,44 @@
 }
 
 .sectionTitle {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(1rem, 3vw, 1.5rem);
   text-align: center;
   color: var(--text-primary);
+  line-height: 1.2;
 }
 
 .description {
   max-width: 700px;
-  margin: 0 auto 2.5rem auto;
+  width: 90%;
+  margin: 0 auto 2.5rem;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 3.5vw, 1.1rem);
   color: var(--text-secondary);
+  line-height: 1.6;
 }
 
 .topicsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  max-width: 1000px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
+  max-width: 1200px;
+  width: 90%;
   margin: 0 auto;
 }
 
 .topicCard {
   background-color: var(--card-bg);
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .topicCard:hover {
@@ -48,36 +59,57 @@
 }
 
 .topicCard h3 {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 4vw, 1.25rem);
   margin-bottom: 0.75rem;
   color: var(--text-primary);
 }
 
 .topicCard p {
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 3.5vw, 1rem);
   color: var(--text-secondary);
   line-height: 1.5;
+  flex-grow: 1;
 }
 
 .footerNote {
-  margin-top: 3rem;
+  margin-top: clamp(2rem, 5vw, 3rem);
   text-align: center;
   font-style: italic;
-  font-size: 0.95rem;
+  font-size: clamp(0.8rem, 3vw, 0.95rem);
   color: var(--text-muted);
+  padding: 0 1rem;
 }
 
-/* Responsive Styling */
-@media (max-width: 768px) {
-  .sectionTitle {
-    font-size: 2rem;
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 480px) {
+  .learningNow {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .topicsGrid {
+    grid-template-columns: 1fr;
+    width: 95%;
+    gap: 1.5rem;
+  }
+
+  .topicCard {
+    padding: 1.25rem;
   }
 
   .description {
-    font-size: 1rem;
+    width: 95%;
+    padding: 0 0.5rem;
+  }
+}
+
+/* Accessibility and Performance Optimization */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
   }
 
-  .topicCard h3 {
-    font-size: 1.1rem;
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }

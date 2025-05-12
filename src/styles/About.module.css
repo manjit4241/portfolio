@@ -1,4 +1,222 @@
-/* About.module.css - Mobile-First Responsive Design */
+/* Mobile-First Responsive Design */
+.about {
+  padding: 1rem;
+  background-color: var(--bg-secondary);
+  transition: background-color var(--transition-speed);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.about.dark {
+  background-color: var(--bg-secondary);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.aboutContent,
+.contactContent {
+  width: 100%;
+  padding: 1.5rem;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  box-sizing: border-box;
+}
+
+.sectionTitle {
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.bio {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+  text-align: justify;
+  word-break: break-word;
+}
+
+.skillsTitle {
+  font-size: clamp(1.2rem, 4.5vw, 1.8rem);
+  margin-bottom: 1rem;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.skillsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.skillTag {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: clamp(0.7rem, 3vw, 0.9rem);
+  margin: 0.25rem;
+  text-align: center;
+}
+
+.contactContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contactInfo {
+  width: 100%;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.contactItem {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contactLabel {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  font-size: clamp(0.9rem, 4vw, 1.1rem);
+}
+
+.contactItem a {
+  color: var(--accent-color);
+  word-break: break-all;
+  font-size: clamp(0.8rem, 3.5vw, 1rem);
+}
+
+.socialLinks {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  color: white;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  transition: all var(--transition-speed);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.socialIcon:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.socialIcon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: clamp(0.8rem, 3vw, 1rem);
+}
+
+/* Responsive Adjustments for Small Screens */
+@media (max-width: 480px) {
+  .container {
+    padding: 0.5rem;
+    gap: 1rem;
+  }
+
+  .aboutContent,
+  .contactContent {
+    padding: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: clamp(1.3rem, 6vw, 1.8rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .bio {
+    font-size: clamp(0.8rem, 4vw, 0.95rem);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .skillsTitle {
+    font-size: clamp(1.1rem, 5vw, 1.5rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .skillTag {
+    font-size: clamp(0.65rem, 3.5vw, 0.8rem);
+    padding: 0.3rem 0.6rem;
+  }
+
+  .contactLabel {
+    font-size: clamp(0.8rem, 4vw, 1rem);
+  }
+
+  .contactItem a {
+    font-size: clamp(0.7rem, 3.5vw, 0.9rem);
+  }
+
+  .socialLinks {
+    gap: 1rem;
+  }
+
+  .socialIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .socialIcon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer {
+    font-size: clamp(0.7rem, 3vw, 0.9rem);
+  }
+}
+
+/* Accessibility and Performance Optimization */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}/* About.module.css - Mobile-First Responsive Design */
 .about {
   padding: 1rem;
   background-color: var(--bg-secondary);
@@ -125,7 +343,6 @@
   background-color: var(--accent-hover);
   transform: translateY(-5px);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-  background-color: yellow;
 }
 
 .socialIcon svg {
@@ -171,12 +388,6 @@
   .contactItem {
     width: 100%;
   }
-  .socialIcon:hover {
-  background-color: var(--accent-hover);
-  transform: translateY(-5px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-  background-color: yellow;
-}
 }
 
 /* Accessibility and Performance Optimization */
